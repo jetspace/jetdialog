@@ -11,8 +11,9 @@
 #include <gtk/gtk.h>
 #include "yesno.h"
 #include "inputbox.h"
+#include "menu.h"
 
-#define VERSION "0.01"
+#define VERSION "0.02"
 
 //defines for 'usage'
 enum {
@@ -53,6 +54,7 @@ Planned for future:
   - enable module loading (plugins)
 
 */
+
 int main(int argc, char **argv)
 {
   int ret;
@@ -80,7 +82,13 @@ int main(int argc, char **argv)
               usage(FALSE_ARGS);
             continue;
           }
-
+          else if(strcmp(argv[x], "--menu") == 0)
+          {
+            ret = create_menu_dialog(argc, argv, x);
+            if(ret == -1)
+              usage(FALSE_ARGS);
+            continue;
+          }
 
 
 

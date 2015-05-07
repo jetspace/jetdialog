@@ -11,6 +11,11 @@ void destroy(GtkWidget *w, GdkEvent *e, gpointer p)
   gtk_main_quit();
 }
 
+void cancel(GtkWidget *w, GdkEvent *e, GtkWidget *toDestroy)
+{
+  gtk_widget_destroy(toDestroy);
+}
+
 void reset_config(void)
 {
   backtitle = NULL;

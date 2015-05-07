@@ -1,5 +1,5 @@
 /*
-    Contains the YesNo dialogs
+    Contains the InputBox dialogs
     Copyright (C) 2015 Marius Messerschmidt
 */
 #include "inputbox.h"
@@ -9,11 +9,6 @@ GtkWidget *input;
 void ok(GtkWidget *w, GdkEvent *e, GtkWidget *toDestroy)
 {
   fprintf(stderr, "%s", gtk_entry_get_text(GTK_ENTRY(input)));
-  gtk_widget_destroy(toDestroy);
-}
-
-void cancel(GtkWidget *w, GdkEvent *e, GtkWidget *toDestroy)
-{
   gtk_widget_destroy(toDestroy);
 }
 
