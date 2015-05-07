@@ -82,6 +82,17 @@ int main(int argc, char **argv)
           }
 
 
+
+
+          //phrase config params
+          if(strcmp(argv[x], "--backtitle") == 0)
+            if(argc > x+1)
+              {
+                set_backtitle(argv[x+1]);
+                x++;
+              }
+
+
         }
 
     }

@@ -39,6 +39,8 @@ short create_input_box_dialog(int argc, char **argv, int start)
   gtk_container_set_border_width(GTK_CONTAINER(win), 18);
   g_signal_connect(G_OBJECT(win), "destroy", G_CALLBACK(destroy), NULL);
 
+  apply_dialog_config(GTK_WINDOW(win));
+
   //Create BOX + Message label
   GtkWidget *box = gtk_box_new(GTK_ORIENTATION_VERTICAL, 18);
   GtkWidget *label = gtk_label_new(msg);
@@ -67,6 +69,6 @@ short create_input_box_dialog(int argc, char **argv, int start)
   gtk_widget_show_all(win);
 
   gtk_main();
-
+  reset_config();
   return 0;
 }
