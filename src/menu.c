@@ -83,8 +83,10 @@ short create_menu_dialog(int argc, char **argv, int start)
   gtk_box_pack_end(GTK_BOX(buttonbox), button_cancel, FALSE, FALSE, 0);
 
   gtk_container_add(GTK_CONTAINER(box), label);
-  gtk_container_add(GTK_CONTAINER(box), scroll);
   gtk_box_pack_end(GTK_BOX(box), buttonbox, FALSE, TRUE, 0);
+  gtk_box_pack_end(GTK_BOX(box), scroll, TRUE, TRUE, 0);
+
+
   gtk_container_add(GTK_CONTAINER(win), box);
   gtk_widget_show_all(win);
 

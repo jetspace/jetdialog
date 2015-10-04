@@ -11,9 +11,10 @@
 #include <gtk/gtk.h>
 #include "yesno.h"
 #include "inputbox.h"
+#include "mixedform.h"
 #include "menu.h"
 
-#define VERSION "0.02"
+#define VERSION "0.03"
 
 //defines for 'usage'
 enum {
@@ -85,6 +86,13 @@ int main(int argc, char **argv)
           else if(strcmp(argv[x], "--menu") == 0)
           {
             ret = create_menu_dialog(argc, argv, x);
+            if(ret == -1)
+              usage(FALSE_ARGS);
+            continue;
+          }
+          else if(strcmp(argv[x], "--mixedform") == 0)
+          {
+            ret = create_mixed_form_dialog(argc, argv, x);
             if(ret == -1)
               usage(FALSE_ARGS);
             continue;

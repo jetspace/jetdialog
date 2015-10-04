@@ -23,3 +23,8 @@ VAR="$VAR $O"
 done
 echo "Building from $VAR"
 gcc -Wall $VAR -o jdialog `pkg-config --cflags --libs gtk+-3.0`
+
+if [ "$1" == "-i" ]
+then
+sudo cp jdialog /usr/bin/
+fi
